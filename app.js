@@ -7,10 +7,12 @@
 
   /* ---------- real work (Lucera, our own store) ---------- */
   var ADS = [
+    { f: "c-roofing", t: "Roofing · concept", s: "sq" }, { f: "c-dental", t: "Dental · concept", s: "sq" },
     { f: "abito", t: "Dress", s: "story" }, { f: "giacca-collage", t: "Jacket", s: "sq" },
     { f: "maglione", t: "Knitwear", s: "story" }, { f: "pullover-collage", t: "Pullover", s: "sq" },
     { f: "stivaletti", t: "Boots", s: "story" }, { f: "mocassini-collage", t: "Shoes", s: "sq" },
-    { f: "gilet", t: "Co-ord set", s: "story" }, { f: "giubbotto", t: "Puffer jacket", s: "story" }
+    { f: "gilet", t: "Co-ord set", s: "story" }, { f: "giubbotto", t: "Puffer jacket", s: "story" },
+    { f: "c-gym", t: "Gym · concept", s: "sq" }, { f: "c-cleaning", t: "Cleaning · concept", s: "sq" }
   ];
   var PAGES = [
     { f: "storbolt", u: "storbolt.com", t: "Storbolt" },
@@ -18,12 +20,16 @@
     { f: "trench", u: "luceramoda.com/products/trench-lungo", t: "Long trench" },
     { f: "completo", u: "luceramoda.com/products/completo-gilet", t: "Waistcoat set" },
     { f: "velluto", u: "luceramoda.com/products/giacca-velluto", t: "Corduroy jacket" },
-    { f: "stivaletti", u: "luceramoda.com/products/stivaletti", t: "Heeled boots" }
+    { f: "stivaletti", u: "luceramoda.com/products/stivaletti", t: "Heeled boots" },
+    { f: "c-roofing", u: "summitroofing.com", t: "Roofing concept" }, { f: "c-dental", u: "brightsmile.com", t: "Dental concept" },
+    { f: "c-gym", u: "ironyard.fit", t: "Gym concept" }, { f: "c-cleaning", u: "freshnest.co", t: "Cleaning concept" }
   ];
   var EMAILS = [
     { f: "W1_welcome", d: "Welcome · Day 0" }, { f: "W3_welcome", d: "Welcome · Size guide" },
     { f: "R1_winback", d: "New arrivals" }, { f: "BF1_campaign", d: "Black Friday · Launch" },
-    { f: "BF2_campaign", d: "Black Friday · Last hours" }, { f: "P1_postpurchase", d: "After purchase" }
+    { f: "BF2_campaign", d: "Black Friday · Last hours" }, { f: "P1_postpurchase", d: "After purchase" },
+    { f: "c-roofing", d: "Roofing · concept · Day 0" }, { f: "c-dental", d: "Dental · concept · Day 1" },
+    { f: "c-gym", d: "Gym · concept · Day 5" }, { f: "c-cleaning", d: "Cleaning · concept · Day 3" }
   ];
 
   /* ---------- render marquees ---------- */
