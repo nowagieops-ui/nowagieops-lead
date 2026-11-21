@@ -7,34 +7,67 @@
 
   /* ---------- real work (Lucera, our own store) ---------- */
   var ADS = [
-    { f: "c-roofing", t: "Roofing · concept", s: "sq" }, { f: "c-dental", t: "Dental · concept", s: "sq" },
-    { f: "abito", t: "Dress", s: "story" }, { f: "giacca-collage", t: "Jacket", s: "sq" },
-    { f: "maglione", t: "Knitwear", s: "story" }, { f: "pullover-collage", t: "Pullover", s: "sq" },
-    { f: "stivaletti", t: "Boots", s: "story" }, { f: "mocassini-collage", t: "Shoes", s: "sq" },
-    { f: "gilet", t: "Co-ord set", s: "story" }, { f: "giubbotto", t: "Puffer jacket", s: "story" },
-    { f: "c-gym", t: "Gym · concept", s: "sq" }, { f: "c-cleaning", t: "Cleaning · concept", s: "sq" }
+    { f: "x-roofing-1", t: "Roofing" },
+    { f: "x-dental-1", t: "Dental" },
+    { f: "x-fitness-1", t: "Fitness" },
+    { f: "x-cleaning-1", t: "Cleaning" },
+    { f: "x-plumbing-1", t: "Plumbing" },
+    { f: "giacca-collage", t: "Fashion · Lucera" },
+    { f: "x-landscaping-1", t: "Landscaping" },
+    { f: "x-salon-1", t: "Salon" },
+    { f: "x-physio-1", t: "Physio" },
+    { f: "x-roofing-2", t: "Roofing" },
+    { f: "x-dental-2", t: "Dental" },
+    { f: "x-fitness-2", t: "Fitness" },
+    { f: "x-cleaning-2", t: "Cleaning" },
+    { f: "x-plumbing-2", t: "Plumbing" },
+    { f: "x-landscaping-2", t: "Landscaping" },
+    { f: "x-salon-2", t: "Salon" },
+    { f: "x-physio-2", t: "Physio" }
   ];
   var PAGES = [
     { f: "storbolt", u: "storbolt.com", t: "Storbolt" },
-    { f: "felpa", u: "luceramoda.com/products/felpa-mezza-zip", t: "Half-zip knit" },
-    { f: "trench", u: "luceramoda.com/products/trench-lungo", t: "Long trench" },
-    { f: "completo", u: "luceramoda.com/products/completo-gilet", t: "Waistcoat set" },
-    { f: "velluto", u: "luceramoda.com/products/giacca-velluto", t: "Corduroy jacket" },
-    { f: "stivaletti", u: "luceramoda.com/products/stivaletti", t: "Heeled boots" },
-    { f: "c-roofing", u: "summitroofing.com", t: "Roofing concept" }, { f: "c-dental", u: "brightsmile.com", t: "Dental concept" },
-    { f: "c-gym", u: "ironyard.fit", t: "Gym concept" }, { f: "c-cleaning", u: "freshnest.co", t: "Cleaning concept" }
+    { f: "x-roofing-1", u: "summitroofing.com", t: "Roofing" },
+    { f: "x-dental-1", u: "brightsmile.com", t: "Dental" },
+    { f: "x-fitness-1", u: "ironyard.fit", t: "Fitness" },
+    { f: "x-cleaning-1", u: "freshnest.co", t: "Cleaning" },
+    { f: "felpa", u: "luceramoda.com/products/felpa-mezza-zip", t: "Lucera" },
+    { f: "x-plumbing-1", u: "flowline.co", t: "Plumbing" },
+    { f: "x-landscaping-1", u: "greenleafgardens.com", t: "Landscaping" },
+    { f: "x-salon-1", u: "maisonsalon.com", t: "Salon" },
+    { f: "x-physio-1", u: "northsidephysio.com", t: "Physio" },
+    { f: "x-roofing-2", u: "summitroofing.com", t: "Roofing" },
+    { f: "x-dental-2", u: "brightsmile.com", t: "Dental" },
+    { f: "x-fitness-2", u: "ironyard.fit", t: "Fitness" },
+    { f: "x-cleaning-2", u: "freshnest.co", t: "Cleaning" },
+    { f: "x-plumbing-2", u: "flowline.co", t: "Plumbing" },
+    { f: "x-landscaping-2", u: "greenleafgardens.com", t: "Landscaping" },
+    { f: "x-salon-2", u: "maisonsalon.com", t: "Salon" },
+    { f: "x-physio-2", u: "northsidephysio.com", t: "Physio" }
   ];
   var EMAILS = [
-    { f: "W1_welcome", d: "Welcome · Day 0" }, { f: "W3_welcome", d: "Welcome · Size guide" },
-    { f: "R1_winback", d: "New arrivals" }, { f: "BF1_campaign", d: "Black Friday · Launch" },
-    { f: "BF2_campaign", d: "Black Friday · Last hours" }, { f: "P1_postpurchase", d: "After purchase" },
-    { f: "c-roofing", d: "Roofing · concept · Day 0" }, { f: "c-dental", d: "Dental · concept · Day 1" },
-    { f: "c-gym", d: "Gym · concept · Day 5" }, { f: "c-cleaning", d: "Cleaning · concept · Day 3" }
+    { f: "x-roofing-1", d: "Roofing" },
+    { f: "x-dental-1", d: "Dental" },
+    { f: "x-fitness-1", d: "Fitness" },
+    { f: "W1_welcome", d: "Fashion · Lucera" },
+    { f: "x-cleaning-1", d: "Cleaning" },
+    { f: "x-plumbing-1", d: "Plumbing" },
+    { f: "x-landscaping-1", d: "Landscaping" },
+    { f: "x-salon-1", d: "Salon" },
+    { f: "x-physio-1", d: "Physio" },
+    { f: "x-roofing-2", d: "Roofing" },
+    { f: "x-dental-2", d: "Dental" },
+    { f: "x-fitness-2", d: "Fitness" },
+    { f: "x-cleaning-2", d: "Cleaning" },
+    { f: "x-plumbing-2", d: "Plumbing" },
+    { f: "x-landscaping-2", d: "Landscaping" },
+    { f: "x-salon-2", d: "Salon" },
+    { f: "x-physio-2", d: "Physio" }
   ];
 
   /* ---------- render marquees ---------- */
   function adCard(a) {
-    return '<figure class="shot shot--' + a.s + '"><img src="assets/work/ads/' + a.f + '.jpg" alt="Lucera ad: ' + esc(a.t) + '"><figcaption>Ad · ' + esc(a.t) + '</figcaption></figure>';
+    return '<figure class="shot shot--sq"><img src="assets/work/ads/' + a.f + '.jpg" alt="Lucera ad: ' + esc(a.t) + '"><figcaption>' + esc(a.t) + '</figcaption></figure>';
   }
   function pageCard(p) {
     return '<figure class="lp"><div class="lp-bar"><i></i><i></i><i></i><em>' + esc(p.u) + '</em></div>' +
@@ -44,15 +77,16 @@
     return '<figure class="em em--shot"><div class="em-day">' + esc(e.d) + '</div>' +
       '<div class="em-crop"><img src="assets/work/emails/' + e.f + '.jpg" alt="Lucera email: ' + esc(e.d) + '"></div></figure>';
   }
-  function fill(id, arr, fn) {
+  function fill(id, arr, fn, secs) {
     var el = document.getElementById(id);
     if (!el) return;
+    el.style.setProperty("--dur", Math.round(arr.length * secs) + "s");
     var html = arr.map(fn).join("");
     el.innerHTML = html + html.replace(/<figure /g, '<figure aria-hidden="true" ');
   }
-  fill("ads", ADS, adCard);
-  fill("pages", PAGES, pageCard);
-  fill("emails", EMAILS, emailCard);
+  fill("ads", ADS, adCard, 7);
+  fill("pages", PAGES, pageCard, 11);
+  fill("emails", EMAILS, emailCard, 8);
 
   /* ---------- reveal + arrows ---------- */
   var io = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
