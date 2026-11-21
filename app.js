@@ -13,6 +13,7 @@
     { f: "gilet", t: "Co-ord set", s: "story" }, { f: "giubbotto", t: "Puffer jacket", s: "story" }
   ];
   var PAGES = [
+    { f: "storbolt", u: "storbolt.com", t: "Storbolt" },
     { f: "felpa", u: "luceramoda.com/products/felpa-mezza-zip", t: "Half-zip knit" },
     { f: "trench", u: "luceramoda.com/products/trench-lungo", t: "Long trench" },
     { f: "completo", u: "luceramoda.com/products/completo-gilet", t: "Waistcoat set" },
