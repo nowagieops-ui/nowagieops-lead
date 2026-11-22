@@ -10,72 +10,44 @@
     { f: "x-roofing-1", t: "Roofing" },
     { f: "x-dental-1", t: "Dental" },
     { f: "x-fitness-1", t: "Fitness" },
-    { f: "x-cleaning-1", t: "Cleaning" },
-    { f: "x-plumbing-1", t: "Plumbing" },
     { f: "giacca-collage", t: "Fashion · Lucera" },
-    { f: "x-landscaping-1", t: "Landscaping" },
-    { f: "x-salon-1", t: "Salon" },
-    { f: "x-physio-1", t: "Physio" },
+    { f: "x-cleaning-1", t: "Cleaning" },
     { f: "x-roofing-2", t: "Roofing" },
     { f: "x-dental-2", t: "Dental" },
     { f: "x-fitness-2", t: "Fitness" },
-    { f: "x-cleaning-2", t: "Cleaning" },
-    { f: "x-plumbing-2", t: "Plumbing" },
-    { f: "x-landscaping-2", t: "Landscaping" },
-    { f: "x-salon-2", t: "Salon" },
-    { f: "x-physio-2", t: "Physio" }
+    { f: "x-cleaning-2", t: "Cleaning" }
   ];
   var PAGES = [
     { f: "storbolt", u: "storbolt.com", t: "Storbolt" },
     { f: "x-roofing-1", u: "summitroofing.com", t: "Roofing" },
     { f: "x-dental-1", u: "brightsmile.com", t: "Dental" },
     { f: "x-fitness-1", u: "ironyard.fit", t: "Fitness" },
-    { f: "x-cleaning-1", u: "freshnest.co", t: "Cleaning" },
     { f: "felpa", u: "luceramoda.com/products/felpa-mezza-zip", t: "Lucera" },
-    { f: "x-plumbing-1", u: "flowline.co", t: "Plumbing" },
-    { f: "x-landscaping-1", u: "greenleafgardens.com", t: "Landscaping" },
-    { f: "x-salon-1", u: "maisonsalon.com", t: "Salon" },
-    { f: "x-physio-1", u: "northsidephysio.com", t: "Physio" },
     { f: "x-roofing-2", u: "summitroofing.com", t: "Roofing" },
     { f: "x-dental-2", u: "brightsmile.com", t: "Dental" },
-    { f: "x-fitness-2", u: "ironyard.fit", t: "Fitness" },
-    { f: "x-cleaning-2", u: "freshnest.co", t: "Cleaning" },
-    { f: "x-plumbing-2", u: "flowline.co", t: "Plumbing" },
-    { f: "x-landscaping-2", u: "greenleafgardens.com", t: "Landscaping" },
-    { f: "x-salon-2", u: "maisonsalon.com", t: "Salon" },
-    { f: "x-physio-2", u: "northsidephysio.com", t: "Physio" }
+    { f: "x-fitness-2", u: "ironyard.fit", t: "Fitness" }
   ];
   var EMAILS = [
     { f: "x-roofing-1", d: "Roofing" },
     { f: "x-dental-1", d: "Dental" },
     { f: "x-fitness-1", d: "Fitness" },
     { f: "W1_welcome", d: "Fashion · Lucera" },
-    { f: "x-cleaning-1", d: "Cleaning" },
-    { f: "x-plumbing-1", d: "Plumbing" },
-    { f: "x-landscaping-1", d: "Landscaping" },
-    { f: "x-salon-1", d: "Salon" },
-    { f: "x-physio-1", d: "Physio" },
     { f: "x-roofing-2", d: "Roofing" },
     { f: "x-dental-2", d: "Dental" },
-    { f: "x-fitness-2", d: "Fitness" },
-    { f: "x-cleaning-2", d: "Cleaning" },
-    { f: "x-plumbing-2", d: "Plumbing" },
-    { f: "x-landscaping-2", d: "Landscaping" },
-    { f: "x-salon-2", d: "Salon" },
-    { f: "x-physio-2", d: "Physio" }
+    { f: "x-fitness-2", d: "Fitness" }
   ];
 
   /* ---------- render marquees ---------- */
   function adCard(a) {
-    return '<figure class="shot shot--sq"><img src="assets/work/ads/' + a.f + '.jpg" alt="Lucera ad: ' + esc(a.t) + '"><figcaption>' + esc(a.t) + '</figcaption></figure>';
+    return '<figure class="shot shot--sq"><img src="assets/work/ads/' + a.f + '.jpg" alt="Ad design: ' + esc(a.t) + '"><figcaption>' + esc(a.t) + '</figcaption></figure>';
   }
   function pageCard(p) {
     return '<figure class="lp"><div class="lp-bar"><i></i><i></i><i></i><em>' + esc(p.u) + '</em></div>' +
-      '<img src="assets/work/pages/' + p.f + '.jpg" alt="Lucera product page: ' + esc(p.t) + '"></figure>';
+      '<img src="assets/work/pages/' + p.f + '.jpg" alt="Landing page design: ' + esc(p.t) + '"></figure>';
   }
   function emailCard(e) {
     return '<figure class="em em--shot"><div class="em-day">' + esc(e.d) + '</div>' +
-      '<div class="em-crop"><img src="assets/work/emails/' + e.f + '.jpg" alt="Lucera email: ' + esc(e.d) + '"></div></figure>';
+      '<div class="em-crop"><img src="assets/work/emails/' + e.f + '.jpg" alt="Email design: ' + esc(e.d) + '"></div></figure>';
   }
   function fill(id, arr, fn, secs) {
     var el = document.getElementById(id);
