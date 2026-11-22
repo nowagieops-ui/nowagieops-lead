@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   var CFG = window.NOWAGIE || {};
+  var VER = "20261122a";
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -39,15 +40,15 @@
 
   /* ---------- render marquees ---------- */
   function adCard(a) {
-    return '<figure class="shot shot--sq"><img src="assets/work/ads/' + a.f + '.jpg" alt="Ad design: ' + esc(a.t) + '"><figcaption>' + esc(a.t) + '</figcaption></figure>';
+    return '<figure class="shot shot--sq"><img src="assets/work/ads/' + a.f + '.jpg?v=' + VER + '" alt="Ad design: ' + esc(a.t) + '"><figcaption>' + esc(a.t) + '</figcaption></figure>';
   }
   function pageCard(p) {
     return '<figure class="lp"><div class="lp-bar"><i></i><i></i><i></i><em>' + esc(p.u) + '</em></div>' +
-      '<img src="assets/work/pages/' + p.f + '.jpg" alt="Landing page design: ' + esc(p.t) + '"></figure>';
+      '<img src="assets/work/pages/' + p.f + '.jpg?v=' + VER + '" alt="Landing page design: ' + esc(p.t) + '"></figure>';
   }
   function emailCard(e) {
     return '<figure class="em em--shot"><div class="em-day">' + esc(e.d) + '</div>' +
-      '<div class="em-crop"><img src="assets/work/emails/' + e.f + '.jpg" alt="Email design: ' + esc(e.d) + '"></div></figure>';
+      '<div class="em-crop"><img src="assets/work/emails/' + e.f + '.jpg?v=' + VER + '" alt="Email design: ' + esc(e.d) + '"></div></figure>';
   }
   function fill(id, arr, fn, secs) {
     var el = document.getElementById(id);
