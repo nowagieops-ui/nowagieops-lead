@@ -1,17 +1,16 @@
 (function () {
   "use strict";
   var CFG = window.NOWAGIE || {};
-  var VER = "20261122c";
+  var VER = "20261122d";
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
 
-  /* ---------- real work (Lucera, our own store) ---------- */
+  /* ---------- our work ---------- */
   var ADS = [
     { f: "x-roofing-1", t: "Roofing" },
     { f: "x-dental-1", t: "Dental" },
     { f: "x-fitness-1", t: "Fitness" },
-    { f: "giacca-collage", t: "Fashion · Lucera" },
     { f: "x-cleaning-1", t: "Cleaning" },
     { f: "x-roofing-2", t: "Roofing" },
     { f: "x-dental-2", t: "Dental" },
@@ -31,7 +30,6 @@
     { f: "x-roofing-1", d: "Roofing" },
     { f: "x-dental-1", d: "Dental" },
     { f: "x-fitness-1", d: "Fitness" },
-    { f: "W1_welcome", d: "Fashion · Lucera" },
     { f: "x-roofing-2", d: "Roofing" },
     { f: "x-dental-2", d: "Dental" },
     { f: "x-fitness-2", d: "Fitness" }
