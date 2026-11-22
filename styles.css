@@ -230,7 +230,7 @@ footer nav { display: flex; gap: 22px; }
 .lp { margin: 0; width: 460px; }
 .lp img { display: block; width: 100%; height: auto; }
 .em--shot { margin: 0; width: 330px; }
-.em-crop { height: 390px; overflow: hidden; position: relative; background: #fff; }
+.em-crop { height: 470px; overflow: hidden; position: relative; background: #fff; }
 .em-crop img { display: block; width: 100%; height: auto; }
 .em-crop::after { content: ""; position: absolute; inset: auto 0 0 0; height: 90px; background: linear-gradient(transparent, #fff); }
 .proof-note { color: var(--lime); font-weight: 600; }
