@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var CFG = window.NOWAGIE || {};
-  var VER = "20261122a";
+  var VER = "20261122b";
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -21,10 +21,9 @@
   var PAGES = [
     { f: "storbolt", u: "storbolt.com", t: "Storbolt" },
     { f: "x-roofing-1", u: "summitroofing.com", t: "Roofing" },
-    { f: "x-dental-1", u: "brightsmile.com", t: "Dental" },
     { f: "x-fitness-1", u: "ironyard.fit", t: "Fitness" },
-    { f: "felpa", u: "luceramoda.com/products/felpa-mezza-zip", t: "Lucera" },
     { f: "x-roofing-2", u: "summitroofing.com", t: "Roofing" },
+    { f: "x-dental-1", u: "brightsmile.com", t: "Dental" },
     { f: "x-dental-2", u: "brightsmile.com", t: "Dental" },
     { f: "x-fitness-2", u: "ironyard.fit", t: "Fitness" }
   ];
