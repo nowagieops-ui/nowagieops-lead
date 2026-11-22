@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var CFG = window.NOWAGIE || {};
-  var VER = "20261122b";
+  var VER = "20261122c";
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -42,7 +42,7 @@
     return '<figure class="shot shot--sq"><img src="assets/work/ads/' + a.f + '.jpg?v=' + VER + '" alt="Ad design: ' + esc(a.t) + '"><figcaption>' + esc(a.t) + '</figcaption></figure>';
   }
   function pageCard(p) {
-    return '<figure class="lp"><div class="lp-bar"><i></i><i></i><i></i><em>' + esc(p.u) + '</em></div>' +
+    return '<figure class="lp">' +
       '<img src="assets/work/pages/' + p.f + '.jpg?v=' + VER + '" alt="Landing page design: ' + esc(p.t) + '"></figure>';
   }
   function emailCard(e) {
