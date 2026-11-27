@@ -48,9 +48,9 @@ function doPost(e) {
         name: "NowagieOps",
         replyTo: OWNER_EMAIL,
         subject: "This email is step 3",
-        htmlBody: "<p>Hi,</p><p>You just went through the whole system:</p>" +
-          "<ol><li>Something brought you to our site.</li><li>You landed on a page built to get one action.</li><li>You gave us your email, and this email is what arrived.</li></ol>" +
-          "<p>That is exactly what we build for local businesses: ads that bring the right people, a page that captures them, and follow-up emails that bring them back.</p>" +
+        htmlBody: "<p>Hi,</p><p>You just went through all three steps:</p>" +
+          "<ol><li>Something brought you to our site.</li><li>You landed on a web page built to get one thing done.</li><li>You gave us your email, and this email is what arrived.</li></ol>" +
+          "<p>That is what we make for local businesses: ads that bring in the right people, a web page that gets their details, and follow-up emails that bring them back.</p>" +
           "<p><a href=\"" + SITE_URL + "/#start\">Book a free 15-minute call</a> and we'll show you how it would work for your business, or read the free plan: " +
           "<a href=\"" + SITE_URL + "/growth-plan.html\">" + SITE_URL + "/growth-plan.html</a></p>" +
           "<p>Reply to this email any time.<br>NowagieOps</p>"
@@ -60,8 +60,8 @@ function doPost(e) {
         to: email,
         name: "NowagieOps",
         replyTo: OWNER_EMAIL,
-        subject: "Your free growth plan",
-        htmlBody: "<p>Hi,</p><p>Here is your free growth plan:</p>" +
+        subject: "Your free plan to get more customers",
+        htmlBody: "<p>Hi,</p><p>Here is your free plan:</p>" +
           "<p><a href=\"" + SITE_URL + "/growth-plan.html\">Open the plan</a></p>" +
           "<p>If you'd like us to go through it with you, book a free 15-minute call: " + SITE_URL + "</p>" +
           "<p>Reply to this email any time.<br>NowagieOps</p>"

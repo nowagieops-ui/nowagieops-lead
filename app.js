@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var CFG = window.NOWAGIE || {};
-  var VER = "20261127b";
+  var VER = "20261127d";
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -41,7 +41,7 @@
   }
   function pageCard(p) {
     return '<figure class="lp">' +
-      '<img src="assets/work/pages/' + p.f + '.jpg?v=' + VER + '" alt="Landing page design: ' + esc(p.t) + '"></figure>';
+      '<img src="assets/work/pages/' + p.f + '.jpg?v=' + VER + '" alt="Web page design: ' + esc(p.t) + '"></figure>';
   }
   function emailCard(e) {
     return '<figure class="em em--shot"><div class="em-day">' + esc(e.d) + '</div>' +
@@ -131,15 +131,15 @@
           $$("#trail li[data-s]").forEach(function (li, i) { setTimeout(function () { li.classList.add("done"); }, 250 + i * 450); });
         }
         ok.innerHTML = kind === "step3"
-          ? "<b>That was step 3.</b><span>Check your inbox: the email you just got is exactly what your own customers would receive after they click your ad and land on your page. Can't see it in a minute? Look in spam or promotions.</span>"
+          ? "<b>That was step 3.</b><span>Check your inbox: the email you just got is the kind your own customers would get after they click your ad and visit your web page. Can't see it in a minute? Look in spam or promotions.</span>"
           : kind === "growth-plan"
-          ? "<b>Check your inbox.</b><span>Your growth plan is on its way. Can't see it in a minute? Look in spam or promotions. You can also <a href=\"growth-plan.html\">read it here now</a>.</span>"
+          ? "<b>Check your inbox.</b><span>Your free plan is on its way. Can't see it in a minute? Look in spam or promotions. You can also <a href=\"growth-plan.html\">read it here now</a>.</span>"
           : "<b>Got it. Thank you.</b><span>We'll email you a few times to pick from, usually within one working day.</span>";
         f.replaceWith(ok);
       };
 
       if (!CFG.formEndpoint) { // fallback until the Apps Script is connected
-        var subj = kind === "step3" ? "Show me step 3" : kind === "growth-plan" ? "Send me the free growth plan" : "Book my free 15-minute call";
+        var subj = kind === "step3" ? "Show me step 3" : kind === "growth-plan" ? "Send me the free plan" : "Book my free 15-minute call";
         location.href = "mailto:" + (CFG.contactEmail || "") + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent("My email: " + email);
         return;
       }
