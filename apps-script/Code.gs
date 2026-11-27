@@ -42,7 +42,20 @@ function doPost(e) {
       subject: "New lead: " + email + " (" + (p.kind || "?") + ")",
       body: "Email: " + email + "\nType: " + (p.kind || "") + "\nSource: " + (p.utm_source || "direct")
     });
-    if (p.kind === "growth-plan") {
+    if (p.kind === "step3") {
+      MailApp.sendEmail({
+        to: email,
+        name: "NowagieOps",
+        replyTo: OWNER_EMAIL,
+        subject: "This email is step 3",
+        htmlBody: "<p>Hi,</p><p>You just went through the whole system:</p>" +
+          "<ol><li>Something brought you to our site.</li><li>You landed on a page built to get one action.</li><li>You gave us your email, and this email is what arrived.</li></ol>" +
+          "<p>That is exactly what we build for local businesses: ads that bring the right people, a page that captures them, and follow-up emails that bring them back.</p>" +
+          "<p><a href=\"" + SITE_URL + "/#start\">Book a free 15-minute call</a> and we'll show you how it would work for your business, or read the free plan: " +
+          "<a href=\"" + SITE_URL + "/growth-plan.html\">" + SITE_URL + "/growth-plan.html</a></p>" +
+          "<p>Reply to this email any time.<br>NowagieOps</p>"
+      });
+    } else if (p.kind === "growth-plan") {
       MailApp.sendEmail({
         to: email,
         name: "NowagieOps",

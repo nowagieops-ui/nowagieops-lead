@@ -234,3 +234,13 @@ footer nav { display: flex; gap: 22px; }
 .em-crop img { display: block; width: 100%; height: auto; }
 .em-crop::after { content: ""; position: absolute; inset: auto 0 0 0; height: 90px; background: linear-gradient(transparent, #fff); }
 .proof-note { color: var(--lime); font-weight: 600; }
+
+/* step 3 demo form */
+.step3 { margin: 40px 0 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; padding: 30px; border: 1px solid var(--line-2); border-radius: var(--r-l); background: var(--bg-2); }
+.step3 h3 { font: 800 1.5rem/1.15 var(--display); letter-spacing: -.02em; margin: 0 0 8px; }
+.step3 p { color: var(--muted); margin: 0; }
+.step3 em { font-style: normal; color: var(--lime); }
+.trail li.done { color: var(--text); border-top-color: var(--lime); }
+.trail li.done::before { background: var(--lime); border-color: var(--lime); box-shadow: 0 0 0 6px rgba(198, 255, 61, .2); }
+.trail li.done small { color: var(--muted); }
+@media (max-width: 760px) { .step3 { grid-template-columns: 1fr; padding: 22px; gap: 20px; } }

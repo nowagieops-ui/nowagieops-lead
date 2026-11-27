@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/Bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=20261122d">
+<link rel="stylesheet" href="styles.css?v=20261127a">
 </head>
 <body>
 
@@ -97,12 +97,28 @@
       <span class="eyebrow"><i></i>You're inside it right now</span>
       <h2>This page is the system, working on you.</h2>
     </div>
-    <ol class="trail rv">
+    <ol class="trail rv" id="trail">
       <li>Something got you here: an ad, a link or a search.<small>That was step 1.</small></li>
       <li class="you"><em>You are here</em>You're on a landing page.<small>That's step 2, happening now.</small></li>
-      <li>You book a call or grab the plan.<small>One simple action.</small></li>
-      <li>A few helpful emails follow.<small>That's step 3, if you want them.</small></li>
+      <li data-s="3">You give us your email.<small>One box, one tap.</small></li>
+      <li data-s="4">An email lands in your inbox.<small>That's step 3.</small></li>
     </ol>
+    <div class="step3 rv" id="step3">
+      <div>
+        <h3>Want to see step 3?</h3>
+        <p>Give us your email and the follow-up arrives in your inbox. Sending it <em>is</em> step 3, so by then you will have been through the whole system once.</p>
+      </div>
+      <form class="form" data-form="step3" novalidate>
+        <label for="email-step3">Your email</label>
+        <div class="field">
+          <input id="email-step3" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@yourbusiness.com" required>
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn--lime" type="submit">Show me step 3</button>
+        </div>
+        <p class="err" role="alert" aria-live="polite"></p>
+        <p class="fine">One email now, a couple of helpful ones after. Unsubscribe any time. We never sell your details. <a href="privacy.html">Privacy</a></p>
+      </form>
+    </div>
     <p class="lede rv">It's exactly what we'd build for your business, so your own customers go through it too.</p>
   </div>
 </section>
@@ -203,7 +219,7 @@
   </div>
 </div>
 
-<script src="config.js?v=20261122d"></script>
-<script src="app.js?v=20261122d" defer></script>
+<script src="config.js?v=20261127a"></script>
+<script src="app.js?v=20261127a" defer></script>
 </body>
 </html>
