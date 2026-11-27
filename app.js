@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var CFG = window.NOWAGIE || {};
-  var VER = "20261127d";
+  var VER = "20261127f";
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -77,13 +77,12 @@
   function openModal() {
     lastFocus = document.activeElement;
     modal.hidden = false;
-    var i = $("input[type=email]", modal); if (i) i.focus();
+    var i = $("input:not(.hp)", modal); if (i) i.focus();
   }
   function closeModal() { modal.hidden = true; if (lastFocus) lastFocus.focus(); }
   $$("[data-book]").forEach(function (b) {
     b.addEventListener("click", function () {
-      if (CFG.bookingUrl) window.open(CFG.bookingUrl, "_blank", "noopener");
-      else openModal();
+      openModal();
     });
   });
   $$("[data-close]").forEach(function (b) { b.addEventListener("click", closeModal); });
@@ -120,6 +119,8 @@
       var err = $(".err", f), btn = $("button[type=submit]", f);
       var email = f.elements.email.value.trim();
       err.textContent = "";
+      var missing = $$("[required]", f).filter(function (i) { return i.type !== "email" && !i.value.trim(); })[0];
+      if (missing) { err.textContent = "Please fill in this box."; missing.focus(); return; }
       if (!EMAIL_RE.test(email)) { err.textContent = "Please enter a valid email address."; f.elements.email.focus(); return; }
       if (f.elements.website.value) return; // honeypot: bots fill this
       if (Date.now() - loaded < 1500) { err.textContent = "One second, then try again."; return; }
@@ -134,17 +135,19 @@
           ? "<b>That was step 3.</b><span>Check your inbox: the email you just got is the kind your own customers would get after they click your ad and visit your web page. Can't see it in a minute? Look in spam or promotions.</span>"
           : kind === "growth-plan"
           ? "<b>Check your inbox.</b><span>Your free plan is on its way. Can't see it in a minute? Look in spam or promotions. You can also <a href=\"growth-plan.html\">read it here now</a>.</span>"
-          : "<b>Got it. Thank you.</b><span>We'll email you a few times to pick from, usually within one working day.</span>";
+          : "<b>Got it. Thank you.</b><span>We'll email you a few times to pick from, usually within one working day.</span>" + (CFG.bookingUrl ? "<span>Want to pick a time now? <a href=\"" + CFG.bookingUrl + "\" target=\"_blank\" rel=\"noopener\">Choose a time</a>.</span>" : "");
         f.replaceWith(ok);
       };
 
       if (!CFG.formEndpoint) { // fallback until the Apps Script is connected
-        var subj = kind === "step3" ? "Show me step 3" : kind === "growth-plan" ? "Send me the free plan" : "Book my free 15-minute call";
-        location.href = "mailto:" + (CFG.contactEmail || "") + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent("My email: " + email);
+        var subj = kind === "step3" ? "Show me step 3" : kind === "growth-plan" ? "Send me the free plan" : "Book my free growth call";
+        location.href = "mailto:" + (CFG.contactEmail || "") + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent($$("input, select, textarea", f).filter(function (i) { return i.name && i.name !== "website" && i.value.trim(); }).map(function (i) { return (i.getAttribute("data-label") || i.name) + ": " + i.value.trim(); }).join("\n"));
         return;
       }
       btn.disabled = true; var label = btn.textContent; btn.textContent = "Sending…";
-      var body = new URLSearchParams(Object.assign({ email: email, kind: kind, page: location.href, referrer: document.referrer || "" }, utm));
+      var extra = {};
+      $$("input, select, textarea", f).forEach(function (i) { if (i.name && i.name !== "website" && i.name !== "email" && i.value.trim()) extra[i.name] = i.value.trim(); });
+      var body = new URLSearchParams(Object.assign({ email: email, kind: kind, page: location.href, referrer: document.referrer || "" }, extra, utm));
       fetch(CFG.formEndpoint, { method: "POST", body: body, mode: "no-cors" })
         .then(done)
         .catch(function () {
